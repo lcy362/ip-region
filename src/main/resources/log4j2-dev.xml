@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="warn">
+    <properties>
+        <property name="name">ads-playground</property>
+        <!-- http://logging.apache.org/log4j/2.x/manual/layouts.html -->
+        <property name="pattern">%d{yyyy-MM-dd HH:mm:ss.SSS}[%p] %c{2}:%L(%M) | %msg%n</property>
+        <!--
+        Example:
+        2013-12-09 02:00:27.660[FATAL] Program:main:13 | Hello world
+        -->
+    </properties>
+    <appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${pattern}"/>
+        </Console>
+        <RollingFile name="rollingFile" fileName="${sys:user.home}/logs/${name}.log" filePattern="${sys:user.home}/logs/${date:yyyy-MM}/${name}-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout>
+                <pattern>${pattern}</pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="100 MB"/>
+            </Policies>
+        </RollingFile>
+    </appenders>
+    <loggers>
+        <root level="info">
+            <appender-ref ref="console"/>
+            <appender-ref ref="rollingFile"/>
+        </root>
+    </loggers>
+</configuration>
