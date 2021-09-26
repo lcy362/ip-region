@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
-@Component
+//@Component
 @Slf4j
 public class UpdateDateRunner implements CommandLineRunner {
 

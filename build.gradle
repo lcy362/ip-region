@@ -25,10 +25,13 @@ dependencies {
     implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5'
     implementation 'org.apache.commons:commons-csv:1.9.0'
     implementation group: 'commons-io', name: 'commons-io', version: '2.6'
+    implementation("com.google.guava:guava:31.0-jre")
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation "org.mockito:mockito-core:3.+"
 }
 
 test {
