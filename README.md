@@ -1,1 +1,1 @@
-the fastest java version ip-country convertor
+java version ip-country convertor
