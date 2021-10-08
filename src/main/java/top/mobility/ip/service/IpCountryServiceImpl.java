@@ -3,12 +3,15 @@ package top.mobility.ip.service;
 import com.google.common.net.InetAddresses;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigInteger;
 import java.net.Inet4Address;
 import java.net.Inet6Address;
@@ -27,7 +30,9 @@ public class IpCountryServiceImpl implements IpCountryService{
 
     @PostConstruct
     public void init() throws IOException {
-        List<String> lines = FileUtils.readLines(new File("ipv4-country.data"), "UTF-8");
+        ClassPathResource resource = new ClassPathResource("data/ipv4-country.data");
+        InputStream inputStream = resource.getInputStream();
+        List<String> lines = IOUtils.readLines(inputStream, "UTF-8");
         ipv4SegStartPoint = new long[lines.size()];
         ipv4SegDesc = new String[lines.size()];
         int i = 0;
@@ -37,7 +42,9 @@ public class IpCountryServiceImpl implements IpCountryService{
             ipv4SegDesc[i++] = split[1];
         }
 
-        lines = FileUtils.readLines(new File("ipv6-country.data"), "UTF-8");
+        resource = new ClassPathResource("data/ipv6-country.data");
+        inputStream = resource.getInputStream();
+        lines = IOUtils.readLines(inputStream, "UTF-8");
         ipv6SegStartPoint = new BigInteger[lines.size()];
         ipv6SegDesc = new String[lines.size()];
         i = 0;
