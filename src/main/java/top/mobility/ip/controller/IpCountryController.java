@@ -11,7 +11,7 @@ import top.mobility.ip.util.IpUtils;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("/address/")
+@RequestMapping("/ip-country/address/")
 @RequiredArgsConstructor
 @Slf4j
 public class IpCountryController {
