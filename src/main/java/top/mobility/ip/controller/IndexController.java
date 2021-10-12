@@ -26,7 +26,7 @@ public class IndexController {
         }
         String ownIp = IpUtils.getClientIpAddress(request);
         String country = service.getCountryOfIp(ownIp);
-        log.info("get request ip = {}, country = {}", ip, country);
+        log.info("get request ip = {}, country = {}", ownIp, country);
         model.addAttribute("ownip", ownIp);
         model.addAttribute("country", country);
         return "index";
