@@ -17,7 +17,7 @@ public class IndexController {
 
     private final IpCountryService service;
 
-    @GetMapping("/index")
+    @GetMapping({"/index", "/"})
     public String showPage(Model model, String ip, HttpServletRequest request) {
         if (ip != null) {
             model.addAttribute("result", service.getCountryOfIp(ip));
