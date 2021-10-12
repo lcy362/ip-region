@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>ip-country</title>
+</head>
+<body>
+<h2 align="center">Query Country OF IP</h2>
+<form th:action="@{/index}" method="get">
+    <input type="text" name="ip" th:value="${ip}"  placeholder="input ipv4 or ipv6 address" size="50" >
+    <button type="submit" class="btn btn-info" >Search</button>
+    <button type="submit" class="btn btn-info" >Reset</button>
+</form>
+<div th:text="${result}" ></div>
+<br/>
+<br/>
+<div th:text ="'your own ip address is ' +  ${ownip}+ ', located in ' + ${country}"></div>
+</body>
+</html>
