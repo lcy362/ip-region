@@ -19,3 +19,6 @@ And the query process is just a simple binary search.
 
 # try it 
 http://ip-country.lichuanyang.top/
+
+
+具体查看实现方式 https://lichuanyang.top/posts/36780/
