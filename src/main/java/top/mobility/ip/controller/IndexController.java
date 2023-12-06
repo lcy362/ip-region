@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import top.mobility.ip.service.IpCountryService;
 import top.mobility.ip.util.IpUtils;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping

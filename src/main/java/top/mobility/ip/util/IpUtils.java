@@ -1,6 +1,6 @@
 package top.mobility.ip.util;
 
-import javax.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletRequest;
 
 public class IpUtils {
 
