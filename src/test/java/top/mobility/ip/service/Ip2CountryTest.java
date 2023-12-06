@@ -6,6 +6,8 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static top.mobility.ip.util.IpUtils.convertNumericIP;
+
 @SpringBootTest
 public class Ip2CountryTest {
 
@@ -53,4 +55,6 @@ public class Ip2CountryTest {
         Assertions.assertEquals("US", service.getCountryOfIp("2620:0:2d0:200::7"));
         Assertions.assertEquals("NL", service.getCountryOfIp("2a04:4e42:600::223"));
     }
+
+
 }

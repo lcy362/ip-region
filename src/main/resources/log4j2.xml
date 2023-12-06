@@ -13,7 +13,7 @@
         <Console name="console" target="SYSTEM_OUT">
             <PatternLayout pattern="${pattern}"/>
         </Console>
-        <RollingFile name="rollingFile" fileName="/workspace/logs/${name}.log" filePattern="/workspace/logs/${date:yyyy-MM}/${name}-%d{yyyy-MM-dd}-%i.log.gz">
+        <RollingFile name="rollingFile" fileName="/opt/applog/logs/${name}.log" filePattern="/opt/applog/logs/${date:yyyy-MM}/${name}-%d{yyyy-MM-dd}-%i.log.gz">
             <PatternLayout>
                 <pattern>${pattern}</pattern>
             </PatternLayout>
