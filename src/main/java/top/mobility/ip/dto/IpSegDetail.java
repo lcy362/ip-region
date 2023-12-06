@@ -20,6 +20,15 @@ public class IpSegDetail {
 
     private String city;
 
+    private String latitude;
+
+    private String longitude;
+
+    private String zipCode;
+
+    private String timeZone;
+
+
     public IpSegDetail(CSVRecord csvRecord) {
         this.start = IpUtils.convertNumericIP(csvRecord.get(0));
         this.end = IpUtils.convertNumericIP(csvRecord.get(1));
@@ -27,16 +36,20 @@ public class IpSegDetail {
         this.country = csvRecord.get(3);
         this.region = csvRecord.get(4);
         this.city = csvRecord.get(5);
+        this.latitude = csvRecord.get(6);
+        this.longitude = csvRecord.get(7);
+        this.zipCode = csvRecord.get(8);
+        this.timeZone = csvRecord.get(9);
     }
 
     public boolean isCivil() {
-        return StringUtils.equals(countryCode, "CN");
+        return StringUtils.equalsIgnoreCase(country, "China");
     }
 
     public String getOutPut() {
-        return start + "," + end + "," + country + "," + region + "," + city;
+        return start + "," + end + "," + country + "," + region + "," + city + "," + latitude + "," + longitude + "," + zipCode + "," + timeZone;
     }
     public String getOutPutWithoutCountry() {
-        return start + "," + end + "," + region + "," + city;
+        return start + "," + end + "," + region + "," + city + "," + latitude + "," + longitude + "," + zipCode + "," + timeZone;
     }
 }

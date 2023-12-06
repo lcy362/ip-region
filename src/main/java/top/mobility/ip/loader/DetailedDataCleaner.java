@@ -19,12 +19,12 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-//@Component
+@Component
 @Slf4j
 public class DetailedDataCleaner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
-        ZipFile input = new ZipFile("/Users/lcy/Downloads/IP2LOCATION-LITE-DB3.CSV.zip");
+        ZipFile input = new ZipFile("/Users/lcy/Downloads/IP2LOCATION-LITE-DB11.CSV.zip");
         Enumeration<? extends ZipEntry> entries = input.entries();
 
         List<String> linesAll = new ArrayList<>();
@@ -32,7 +32,7 @@ public class DetailedDataCleaner implements CommandLineRunner {
 
         while(entries.hasMoreElements()){
             ZipEntry entry = entries.nextElement();
-            if (entry.getName().equals("IP2LOCATION-LITE-DB3.CSV")) {
+            if (entry.getName().equals("IP2LOCATION-LITE-DB11.CSV")) {
                 InputStream stream = input.getInputStream(entry);
                 BufferedReader br = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
                 CSVParser parser = new CSVParser(br, CSVFormat.DEFAULT);
