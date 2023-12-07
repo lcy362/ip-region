@@ -30,8 +30,10 @@ public class IpSegDetail {
 
 
     public IpSegDetail(CSVRecord csvRecord) {
-        this.start = IpUtils.convertNumericIP(csvRecord.get(0));
-        this.end = IpUtils.convertNumericIP(csvRecord.get(1));
+//        this.start = IpUtils.convertNumericIP(csvRecord.get(0));
+//        this.end = IpUtils.convertNumericIP(csvRecord.get(1));
+        this.start = csvRecord.get(0);
+        this.end = csvRecord.get(1);
         this.countryCode = csvRecord.get(2);
         this.country = csvRecord.get(3);
         this.region = csvRecord.get(4);

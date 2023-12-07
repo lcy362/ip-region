@@ -11,16 +11,16 @@ import top.mobility.ip.util.IpUtils;
 import jakarta.servlet.http.HttpServletRequest;
 
 @RestController
-@RequestMapping("/ip-country/address/")
+@RequestMapping("/ip-region/address/")
 @RequiredArgsConstructor
 @Slf4j
 public class IpCountryController {
 
     private final IpCountryService service;
 
-    @GetMapping("/country")
+    @GetMapping("/region")
     public String getCountry(HttpServletRequest request) {
         String ip = IpUtils.getClientIpAddress(request);
-        return service.getCountryOfIp(ip);
+        return service.getDetailOfIp(ip).toString();
     }
 }

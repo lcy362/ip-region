@@ -22,10 +22,10 @@ public class IndexController {
     @GetMapping({"/index", "/"})
     public String showPage(Model model, String ip, HttpServletRequest request) {
         if (ip != null) {
-            model.addAttribute("result", service.getCountryOfIp(ip));
+            model.addAttribute("result", service.getDetailOfIp(ip).toString());
         }
         String ownIp = IpUtils.getClientIpAddress(request);
-        String country = service.getCountryOfIp(ownIp);
+        String country = service.getDetailOfIp(ownIp).toString();
         log.info("get request ip = {}, country = {}", ownIp, country);
         model.addAttribute("ownip", ownIp);
         model.addAttribute("country", country);

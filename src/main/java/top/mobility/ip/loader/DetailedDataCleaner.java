@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-@Component
+//@Component
 @Slf4j
 public class DetailedDataCleaner implements CommandLineRunner {
     @Override
@@ -47,10 +47,10 @@ public class DetailedDataCleaner implements CommandLineRunner {
                 }
             }
         }
-        FileUtils.writeLines(new File("detail-civil.csv"), linesCivil);
+//        FileUtils.writeLines(new File("detail-civil.csv"), linesCivil);
         log.info("finish civil");
 
-        FileUtils.writeLines(new File("detail-all.csv"), linesAll);
+        FileUtils.writeLines(new File("ipv4-detail.data"), linesAll);
         log.info("finish");
 
     }

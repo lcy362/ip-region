@@ -1,7 +1,7 @@
-The fastest ip-country convertor of java version !!!
+The fastest ip-region convertor of java version !!!
 
 # what you can do
-convert ipv4 or ipv6 address to a country code
+convert ip address to region info
 
 # implemention
 the data is from http://download.ip2location.com.
