@@ -39,9 +39,9 @@ public class DetailedDataCleaner implements CommandLineRunner {
                 for (CSVRecord csvRecord : parser) {
                     log.info(csvRecord.toString());
                     IpSegDetail detail = new IpSegDetail(csvRecord);
-                    linesAll.add(detail.getOutPut());
+                    linesAll.add(detail.getSimpleOut());
                     if (detail.isCivil()) {
-                        linesCivil.add(detail.getOutPutWithoutCountry());
+                        linesCivil.add(detail.getSimpleOut());
                     }
 
                 }

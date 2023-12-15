@@ -54,4 +54,8 @@ public class IpSegDetail {
     public String getOutPutWithoutCountry() {
         return start + "," + end + "," + region + "," + city + "," + latitude + "," + longitude + "," + zipCode + "," + timeZone;
     }
+
+    public String getSimpleOut() {
+        return start + "," + countryCode + "," + region + "," + city;
+    }
 }
