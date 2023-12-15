@@ -42,8 +42,17 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.mockito:mockito-core:5.2.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
 }
 
-test {
+tasks.named('test', Test) {
     useJUnitPlatform()
+
+    maxHeapSize = '1G'
+
+    testLogging {
+        events "passed"
+    }
 }

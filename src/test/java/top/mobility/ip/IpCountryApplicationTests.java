@@ -17,7 +17,7 @@ class IpCountryApplicationTests {
 
     @Test
     public void ipTest() {
-        String x = ipCountryService.getCountryOfIp("255.255.255.255");
+        String x = ipCountryService.getDetailOfIp("255.255.255.255").toString();
         System.out.println(x);
     }
 

@@ -44,6 +44,9 @@ public class IpCountryServiceImpl implements IpCountryService{
 
     @Override
     public IpDetail getDetailOfIp(String ip) {
+        if (StringUtils.isBlank(ip)) {
+            return null;
+        }
         InetAddress inetAddress = InetAddresses.forString(ip);
         long ipValue = InetAddresses.toBigInteger(inetAddress).longValue();
         int i = 0;
@@ -64,6 +67,15 @@ public class IpCountryServiceImpl implements IpCountryService{
         }
 
         return detailSegDesc[i - 1];
+    }
+
+    @Override
+    public String getCountryOfIp(String ip) {
+        IpDetail ipDetail = getDetailOfIp(ip);
+        if (ipDetail == null) {
+            return "";
+        }
+        return ipDetail.getCountryCode();
     }
 
 
